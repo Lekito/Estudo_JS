@@ -1,0 +1,26 @@
+		JavaScript
+
+* Alterando números: #06
+ 	- toFixed(2) -> coloca duas casas decimais após a vírgula. Exemplo: n1.toFixed(2)
+
+	- n1.toFixed(2).replace('.', ',') -> esse comando troca o ponto pela vírgula.
+
+	- n1.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}) -> COMANDO PARA COLOCAR NO FORMATO DA MOEDA.
+
+* Operadores #07
+
+	5 + 2 -> 7
+	5 - 2 -> 3
+	5 * 2 -> 10
+	5 / 2 -> 2.5
+	5 % 2 -> 1
+	5 ** 2 -> 25
+
+    - Ordem de precedência:
+	()
+	**
+	*   /   %
+	+   -
+
+
+

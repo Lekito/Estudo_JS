@@ -3,20 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modelo</title>
+    <title>Verificador de Idade</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Modelo para o exercício 15</h1>
+        <h1>Verificador de Idade</h1>
     </header>
 
     <section>
-        <div id="msg">
-            Aqui vai aparecer a mensagem...
+        <div>
+            <p>Ano de nascimento:
+                <input type="number" name="txtano" id="txtano" min="1890" >    
+            </p>
+            <p>
+                Sexo:
+                <input type="radio" name="radsex" id="masc" checked>
+                <label for="mas">Masculino</label>
+                <input type="radio" name="radsex" id="fem">
+                <label for="fem">Feminino</label>
+            </p>
+            <p>
+                <input type="button" value="Verificar" onclick="verificar()">
+            </p>
         </div>
-        <div id="foto">
-            <img id="imagem" src="fotomanha.png" alt="">
+        <div id="res">
+            Preencha os dados acima para ver o resultado!
         </div>
     </section>
 

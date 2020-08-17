@@ -8,15 +8,27 @@ function contar(){
     
     
     if (ini.value.length == 0 || fim.value.length == 0 || passo.value.length ==0) {
+        resultado.innerHTML = `Impossível contar!`
         window.alert('[ERRO] Faltam dados!')
     } else {
         resultado.innerHTML = 'Contando: '
         let iniCont = Number(ini.value)
         let fimCont = Number(fim.value)
         let passoCont = Number(passo.value)
-        for (let c = iniCont; c <= fimCont; c+=passoCont) {
-            resultado.innerHTML += `-> ${c} ` 
-        } 
+        if(iniCont < fimCont) {
+            // Contagem crescente 
+            for (let c = iniCont; c <= fimCont; c+=passoCont) {
+                resultado.innerHTML += ` ${c}  \u{1F449}` 
+            } 
+            resultado.innerHTML += `\u{1F3C1}`
+        } else {
+            // Contagem decrescente
+            for (let c = iniCont; c >= fimCont; c-=passoCont) {
+                resultado.innerHTML += ` ${c}  \u{1F449}` 
+            } 
+            resultado.innerHTML += `\u{1F3C1}`
+        }
+        
     
     }
 

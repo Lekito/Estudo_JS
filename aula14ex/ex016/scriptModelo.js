@@ -11,11 +11,11 @@ function contar(){
         resultado.innerHTML = `Impossível contar!`
         window.alert('[ERRO] Faltam dados!')
     } else {
-        resultado.innerHTML = 'Contando: '
+        resultado.innerHTML = 'Contando: <br> '
         let iniCont = Number(ini.value)
         let fimCont = Number(fim.value)
         let passoCont = Number(passo.value)
-        
+
         if (passoCont <= 0) {
             // Corrigindo o erro do passo 0 ou negativo.
             window.alert('Passo inválido! Considerando PASSO 1')

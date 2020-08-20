@@ -1,18 +1,17 @@
-function calcular() {
+function tabuada() {
     let cal = document.getElementById('calctxt');
-    //const fimCal = 10;
-    var tabuada = document.getElementById('tabuada')
-    let calculando = Number(cal.value);
-    if(calculando != ' '){
-        for(let cont = 1; cont <= tabuada.length; cont++ ) {
-        
-            let mut = 1;
-            mut = cont * calculando
-            
+    const fimCal = 10;
+    let tab = document.getElementById('seltab');
     
+    if(cal.value.length != ' '){
+        let calculando = Number(cal.value);
+        for(let cont = 1; cont <= fimCal ; cont++ ) {
+            let item = document.createElement('option')
+            item.text = `${cont} X ${calculando} = ${cont*calculando} `
+            tab.appendChild(item)
         }
     } else {
-        window.alert("Digite um número!")
+        window.alert("Por favor! Digite um número!")
     }
     
 

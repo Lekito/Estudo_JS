@@ -6,9 +6,9 @@ function calcular() {
     if(calculando != ' '){
         for(let cont = 1; cont <= tabuada.length; cont++ ) {
         
-            let mut = "";
+            let mut = 1;
             mut = cont * calculando
-    
+            
     
         }
     } else {

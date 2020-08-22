@@ -8,3 +8,9 @@ console.log(`Com a ordenação o vetor fica assim!`)
 for(let cont in valores) {
     console.log(`O vetor na ${cont} é = [${valores[cont]}]`)   
 }
+let pos = valores.indexOf(8)
+if(pos == -1) {
+    console.log(`Esse valor não foi encontado!`)
+} else {
+    console.log(`Esse valor foi encontrado na posição ${pos}.`)
+}

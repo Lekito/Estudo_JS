@@ -42,18 +42,24 @@ function finalizar() {
         let tot = vetorAdd.length;
         let maior = vetorAdd[0];
         let menor = vetorAdd[0];
+        let soma = 0;
+        let media = 0;
         for(let pos in vetorAdd) {
+            soma += vetorAdd[pos];
             if(vetorAdd[pos] > maior) {
-                maior = vetorAdd[pos]
+                maior = vetorAdd[pos];
             } 
             if(vetorAdd[pos] < menor){
-                menor = vetorAdd[pos]
+                menor = vetorAdd[pos];
             }
         }
+        media = soma / vetorAdd.length;
         res.innerHTML = '';
         res.innerHTML += `<p> Ao todo, temos ${tot} números cadastrados.</p>`;
         res.innerHTML += `<p> O maior valor informado foi ${maior}. </p>`
         res.innerHTML += `<p> O menor valor informado foi ${menor}. </p>`
+        res.innerHTML += `<p> A soma de todos os números é ${soma}. </P>`
+        res.innerHTML += `<p> A média é ${media}. </P>`
 
     }
 }

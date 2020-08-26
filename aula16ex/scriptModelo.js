@@ -23,15 +23,28 @@ function inlista(n, l) {
 function adicionar() {
     if(isNumero(num.value) && !inlista(num.value, vetorAdd)) {
         vetorAdd.push(Number(num.value)); // add o 'num ' na lista
-        let item = document.createElement('option') // cria o elemento 'option'
-        item.text = `Valor ${num.value} adicionado.`
-        lista.appendChild(item) // add o item na tela com filho do 'select' sendo uma opção dele.
+        let item = document.createElement('option'); // cria o elemento 'option'
+        item.text = `Valor ${num.value} adicionado.`;
+        lista.appendChild(item); // add o item na tela com filho do 'select' sendo uma opção dele.
          
     } else {
-        window.alert('Valor invalido ou já encontrado na lista.')
+        window.alert('Valor invalido ou já encontrado na lista.');
     }
+    num.value = ''; // limpar a caixa do texto.
+    num.focus(); // voltar com o cursor para caixa onde o 'num' é criado. Dando um foco. Com o comando de cima + esse você não precisa apagar toda hora a caixa de texto para adicionar um novo número.
 }
 
+function finalizar() {
+    if(vetorAdd.length == 0) {
+        window.alert('Adicione valores antes de finalizar!');
+    } else {
+        let tot = vetorAdd.length;
+
+        res.innerHTML = '';
+        res.innerHTML += `<p> Ao todo, temos ${tot} números cadastrados.</p>`;
+
+    }
+}
 
 
 

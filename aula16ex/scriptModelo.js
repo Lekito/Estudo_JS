@@ -11,8 +11,9 @@ function adicionar() {
         if(n1 >= 0 && n1 <= 100) {
             for(let cont in vetorAdd){
                 let item = document.createElement('option');
+                item.text = n1;
                 item.value = `notasel${cont}`;
-                notasel.appendChild()
+                notasel.appendChild(item);
             }
         } else {
             alert('Valor invalido! Revise o número antes de adicionar!')

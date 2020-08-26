@@ -53,7 +53,7 @@ function finalizar() {
                 menor = vetorAdd[pos];
             }
         }
-        media = soma / vetorAdd.length;
+        media = soma / tot;
         res.innerHTML = '';
         res.innerHTML += `<p> Ao todo, temos ${tot} números cadastrados.</p>`;
         res.innerHTML += `<p> O maior valor informado foi ${maior}. </p>`

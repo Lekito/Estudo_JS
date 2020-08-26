@@ -26,6 +26,7 @@ function adicionar() {
         let item = document.createElement('option'); // cria o elemento 'option'
         item.text = `Valor ${num.value} adicionado.`;
         lista.appendChild(item); // add o item na tela com filho do 'select' sendo uma opção dele.
+        res.innerHTML = '';
          
     } else {
         window.alert('Valor invalido ou já encontrado na lista.');
@@ -39,9 +40,20 @@ function finalizar() {
         window.alert('Adicione valores antes de finalizar!');
     } else {
         let tot = vetorAdd.length;
-
+        let maior = vetorAdd[0];
+        let menor = vetorAdd[0];
+        for(let pos in vetorAdd) {
+            if(vetorAdd[pos] > maior) {
+                maior = vetorAdd[pos]
+            } 
+            if(vetorAdd[pos] < menor){
+                menor = vetorAdd[pos]
+            }
+        }
         res.innerHTML = '';
         res.innerHTML += `<p> Ao todo, temos ${tot} números cadastrados.</p>`;
+        res.innerHTML += `<p> O maior valor informado foi ${maior}. </p>`
+        res.innerHTML += `<p> O menor valor informado foi ${menor}. </p>`
 
     }
 }

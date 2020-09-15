@@ -9,8 +9,12 @@
     <p>This example requires you to enter commands in your browser's JavaScript console (see <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools">What are browser developer tools</a> for more information</p>
    
     <script>
-        var pessoa = {
-            nome: ['Bob', 'Smith'],
+        var pessoa = {  // fonte dessas aula -> https://developer.mozilla.org/pt-BR/docs/Aprender/JavaScript/Objetos/B%C3%A1sico
+            //nome: ['Bob', 'Smith'], // para usar esse array é preciso colocar o Sub-namespace abaixo como comentário.
+            nome: { // Aqui estamos efetivamente criando um sub-namespace
+                primeiro: 'Bob',
+                ultimo: 'Smith'
+            },
             idade: 32,
             sexo: 'masculino',
             interesses: ['música', 'esquiar'],
@@ -22,11 +26,14 @@
             }
         };
         window.alert(pessoa.nome);
-        window.alert('Meu primerio nome ' + pessoa.nome[0]);
+        window.alert(pessoa.nome.primeiro);
+        window.alert(pessoa.nome.ultimo);
+        //window.alert('Meu primerio nome ' + pessoa.nome[0]);
         window.alert('Tenho ' + pessoa.idade + ' anos.');
-        window.alert('Tenho interesse em ' + pessoa.interesses[1] + '.')
-        window.alert(pessoa.bio());
-        window.alert(pessoa.saudacao());
+        //window.alert('Tenho interesse em ' + pessoa.interesses[1] + '.')
+        //window.alert(pessoa.bio());
+        //window.alert(pessoa.saudacao());
+
         /* Esse comando abaixo não funcionou! Vou insvestigar depois, o por que de não funcionar!
 
         window.alert(`Meu primerio nome ${pesssoa.nome[0]}.`);

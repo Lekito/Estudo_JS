@@ -19,7 +19,7 @@
             sexo: 'masculino',
             interesses: ['música', 'esquiar'],
             bio: function() {
-                alert(this.nome.primeiro + '' + this.nome.ultimo + ' tem ' + this.idade + ' anos de idade. Ele gosta de ' + this.interesses[0] + ' e ' + this.interesses[1] + '.');
+                alert(this.nome.primeiro + ' ' + this.nome.ultimo + ' tenho ' + this.idade + ' anos de idade. Ele gosta de ' + this.interesses[0] + ' e ' + this.interesses[1] + '.');
             },
             saudacao: function() {
                 alert('Oi! Eu sou ' + this.nome.primeiro + '.');
@@ -34,7 +34,13 @@
         window.alert(pessoa.bio());
         window.alert(pessoa.saudacao());
 
-     
+        /*
+        Até agora nós apenas procuramos receber (ou apanhar) membros de objetos — podemos também setar (atualizar) o valor de membros de objetos simplesmente declarando o membro que queremos setar (usando notação de ponto ou colchete), tipo assim:  abaixo!
+        */
+        pessoa.idade = 45;
+        pessoa['nome']['ultimo'] = ' Cratchit';
+        window.alert('Meu ultimo nome agora é ' + pessoa.nome.ultimo);
+        window.alert(pessoa.bio());
     </script>
 </body>
 </html>

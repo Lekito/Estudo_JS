@@ -25,6 +25,8 @@
                 alert('Oi! Eu sou ' + this.nome.primeiro + '.');
             }
         };
+        
+        
         window.alert(pessoa.nome);
         window.alert(pessoa.nome.primeiro);
         window.alert(pessoa.nome.ultimo);
@@ -33,6 +35,7 @@
         window.alert('Tenho interesse em ' + pessoa.interesses[1] + '.')
         window.alert(pessoa.bio());
         window.alert(pessoa.saudacao());
+        
 
         /*
         Até agora nós apenas procuramos receber (ou apanhar) membros de objetos — podemos também setar (atualizar) o valor de membros de objetos simplesmente declarando o membro que queremos setar (usando notação de ponto ou colchete), tipo assim:  abaixo!
@@ -41,6 +44,15 @@
         pessoa['nome']['ultimo'] = ' Cratchit';
         window.alert('Meu ultimo nome agora é ' + pessoa.nome.ultimo);
         window.alert(pessoa.bio());
+
+        /*
+        Não podemos apenas atualizar valores existentes de propriedades e métodos; podemos também criar membros completamente novos. Tente isso aqui no console:
+        */
+        pessoa['olhos'] = 'castanho';
+        pessoa.despedida = function() {alert('Adeus a todos!'); }
+        window.alert('Meus olhos são ' + pessoa['olhos']);
+        window.alert(pessoa.despedida());
+       
     </script>
 </body>
 </html>

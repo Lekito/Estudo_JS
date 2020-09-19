@@ -16,6 +16,7 @@
             interesses: ['música', 'esquiar'],
             bio: function() {
                 alert(this.nome[0] + ' ' + this.nome[1] + ' tem ' + this.idade + ' anos de idade. Ele gosta de ' + this.interesses[0] + ' e ' + this.interesses[1] + '.');
+                alert(`Meu primerio nome ${this.nome[0]}.`); // erro corrigido.
             },
             saudacao: function() {
                 alert(`Oi! Eu sou  ${this.nome[0]}.`); // usando t
@@ -29,13 +30,13 @@
         window.alert('Tenho interesse em ' + pessoa.interesses[1] + '.')
         window.alert(pessoa.bio());
         window.alert(pessoa.saudacao());
-
-        window.alert(`Meu primerio nome ${nome[0]}.`); // erro corrigido.
+        
+        //window.alert(` Tenho ${idade} anos. `);
         /* Esse comando abaixo não funcionou! Vou insvestigar depois, o por que de não funcionar!
         Já entendi o erro, como estou dentro de um objeto eu não preciso especificar ele todo para faze lo funcionar!
         Exemplo: 
         
-        window.alert(`Tenho ${pessoa.idade} anos.`); // o erro aqui esta em ter 'pessoa.' a maneira correta é window.alert(`Tenho $idade} anos.`)
+        window.alert(`Tenho ${pessoa.idade} anos.`); // o erro aqui esta em ter 'pessoa.' a maneira correta é window.alert(`Tenho ${idade} anos.`)
         */
 
        /*

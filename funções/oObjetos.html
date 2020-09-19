@@ -18,7 +18,7 @@
                 alert(this.nome[0] + ' ' + this.nome[1] + ' tem ' + this.idade + ' anos de idade. Ele gosta de ' + this.interesses[0] + ' e ' + this.interesses[1] + '.');
             },
             saudacao: function() {
-                alert('Oi! Eu sou ' + this.nome[0] + '.');
+                alert(`Oi! Eu sou  ${this.nome[0]}.`); // usando t
             }
         };
         window.alert(pessoa.nome);
@@ -30,14 +30,14 @@
         window.alert(pessoa.bio());
         window.alert(pessoa.saudacao());
 
+        window.alert(`Meu primerio nome ${nome[0]}.`); // erro corrigido.
         /* Esse comando abaixo não funcionou! Vou insvestigar depois, o por que de não funcionar!
-
-        window.alert(`Meu primerio nome ${pesssoa.nome[0]}.`);
-        window.alert(`Tenho ${pessoa.idade} anos.`);
-        window.alert(`Tenho interesse em ${pessoa.interesses[1]}`);
-        window.alert(pessoa.bio());
-        window.alert(pessoa.saudacao());
+        Já entendi o erro, como estou dentro de um objeto eu não preciso especificar ele todo para faze lo funcionar!
+        Exemplo: 
+        
+        window.alert(`Tenho ${pessoa.idade} anos.`); // o erro aqui esta em ter 'pessoa.' a maneira correta é window.alert(`Tenho $idade} anos.`)
         */
+
        /*
        O valor de um membro do objeto pode ser praticamente qualquer coisa. Em nosso objeto pessoa, temos uma string, um número, dois arrays e duas functions. Os primeiros quatro são data items (dados) e são referenciados como *PROPRIEDADES* do objeto. Enquanto os dois últimos ítens são funções que permitem que o objeto faça algo com esses dados. São chamados de *MÉTODOS* do objeto.
 

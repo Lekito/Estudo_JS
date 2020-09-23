@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object-oriented JavaScript exemple</title>
+</head>
+<body>
+    <p>This example requires you to enter commands in your browser's JavaScript console (see <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools">What are browser developer tools</a> for more information</p>
+   
+    <script>
+        var pessoa = {  // fonte dessas aula -> https://developer.mozilla.org/pt-BR/docs/Aprender/JavaScript/Objetos/B%C3%A1sico
+            
+            nome: { // Aqui estamos efetivamente criando um sub-namespace
+                primeiro: 'Bob',
+                ultimo: 'Smith'
+            },
+            idade: 32,
+            sexo: 'masculino',
+            interesses: ['música', 'esquiar'],
+            bio: function() {
+                alert(this.nome.primeiro + ' ' + this.nome.ultimo + ' tenho ' + this.idade + ' anos de idade. Ele gosta de ' + this.interesses[0] + ' e ' + this.interesses[1] + '.');
+            },
+            saudacao: function() {
+                alert('Oi! Eu sou ' + this.nome.primeiro + '.');
+            }
+        };
+        
+        var myDataName = 'altura';
+        var myDataValue = '1.75m';
+        pessoa[myDataName] = myDataValue;
+
+        alert(pessoa.altura);        
+        
+       
+    </script>
+</body>
+</html>

@@ -35,3 +35,38 @@ body {
 .instagram-phone img {
     height: 50rem;
 }
+
+.instagram-continue {
+    display: flex;
+    align-items: center; /* foi para horizontal*/
+    justify-content: space-around; /* foi para vertical*/
+    flex-direction: column; /* por causa dessa propriedade */
+    width: 50%;
+    min-height: 34rem;
+}
+
+.group {
+    display: flex;
+    justify-content: space-between; /* virou vertical*/
+    align-items: center; /* virou horizontal */
+    flex-direction: column; /* mudou o eixo do group */
+    background-color: #ffffff;
+    width: 100%;
+    padding: 1.3rem 0; /* encima e em baixo 1.3rem, nas laterais 0*/
+    border: 1px solid lightgray;
+}
+/* pegando o primeiro elemento filho do group*/
+.group:nth-child(1) {
+    min-height: 19rem;
+}
+
+.instagram-logo {
+    height: 3rem;
+}
+
+.profile-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}

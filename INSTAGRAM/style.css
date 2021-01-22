@@ -126,3 +126,26 @@ body {
 .app-download:nth-child(2) {
     background-image: url('./img/googleplay-button.png');
 }
+
+/* media queries para tablet*/
+@media (max-width:1024px) {
+    .instagram-wrapper {
+        width: 90%;
+    }
+}
+
+/* media queries para celular*/
+
+@media (max-width: 650px) {
+    .instagram-wrapper {
+        width: 90%;
+    }
+
+    .instagram-phone {
+        display: none; /* retirei o foto do celular */
+    }
+
+    .instagram-continue {
+        width: 100%;
+    }
+}

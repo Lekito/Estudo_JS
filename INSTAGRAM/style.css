@@ -68,5 +68,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    border-radius: 50%;
+    overflow: hidden; /* para imagem não esceder o tamanho da div para fora. O que ultrapassa os limites fica escondido*/
+}
+
+.profile-photo img {
+    height: 6rem;
+}
+
+.instagram-login {
+    background-color: #0095f6;
+    color: #ffffff;
+    padding: 8px;
+    border-radius: 4px;
 }

@@ -21,7 +21,6 @@ console.log(user);
 
 // Adicionado uma propriedade
 const prop = 'name';
-
 user[prop] = 'Vinicius';
 
 

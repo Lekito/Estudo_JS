@@ -38,15 +38,34 @@ Saída de amostra
 3
 */
 
-var listaNumeros = [2,2,4,1,5,1];
+var listaNumeros = [2, 2, 4, 1, 5, 1, 2];
 dupla = 0;
 
-for(cont = 0; cont < listaNumeros.length; cont++){
-    for(j = 1; j <= listaNumeros.length; j++){
-        if(listaNumeros[cont] == listaNumeros[j]){
-            dupla++;
-            console.log(listaNumeros[cont]);
-        }
+
+for (cont = 0; cont < listaNumeros.length; cont++) {
+    if (listaNumeros[cont] == listaNumeros[cont + 1]) {
+        dupla++;
+        console.log(`Posição [${cont}] = [${cont + 1}] ${listaNumeros[cont]}`);
+    }
+    if (listaNumeros[cont] == listaNumeros[cont + 2]) {
+        dupla++;
+        console.log(`Posição [${cont}] = [${cont + 2}] ${listaNumeros[cont]}`);
+    }
+    if (listaNumeros[cont] == listaNumeros[cont + 3]) {
+        dupla++;
+        console.log(`Posição [${cont}] = [${cont + 3}] ${listaNumeros[cont]}`);
+    }
+    if (listaNumeros[cont] == listaNumeros[cont + 4]) {
+        dupla++;
+        console.log(`Posição [${cont}] = [${cont + 4}] ${listaNumeros[cont]}`);
+    }
+    if (listaNumeros[cont] == listaNumeros[cont + 5]) {
+        dupla++;
+        console.log(`Posição [${cont}] = [${cont + 5}] ${listaNumeros[cont]}`);
+    }
+    if (listaNumeros[cont] == listaNumeros[cont + 6]) {
+        dupla++;
+        console.log(`Posição [${cont}] = [${cont + 6}] ${listaNumeros[cont]}`);
     }
 }
 console.log(`O número de duplas = ${dupla}`);

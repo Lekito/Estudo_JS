@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faturamento do Dia</title>
+</head>
+
+<body>
+
+    <h4 id="maiorValor"></h4>
+
+    <h4 id="menorValor"></h4>
+
+    <h4 id="media"></h4>
+
+    <h4 id="lista"></h4>
+
+    <div id="diaFaturamento">
+
+    </div>
+
+    <script>
+        let divDiaFaturamento = document.querySelector("#diaFaturamento")
+
+        let divMedia = document.querySelector("#media")
+        let divMaiorValor = document.querySelector("#maiorValor")
+        let divMenorValor = document.querySelector("#menorValor")
+        let divLista = document.querySelector("#lista")
+
+        fetch('dados.json').then((response) => {
+            response.json().then((dados) => {
+
+
+
+                // Cria um array e excluindo o 0
+                const listValores = dados.map((value) => value.valor).filter((valor) => valor > 0)
+                //console.log(listValores)
+
+
+                const intialValue = 0
+                //Pegando o maior valor
+                const maiorValor = listValores.reduce((a, b) => a > b ? a : b)
+                // Obtendo o menor valor
+                const menorValor = listValores.reduce((a, b) => a < b ? a : b)
+
+                console.log("O maior valor no mês é:  " + maiorValor)
+
+
+
+                console.log("O menor valor no mês é:  " + menorValor)
+
+                //Filtrando todos os resultados com as vendas maiores que 0.
+                const res = dados.filter((dia) => dia.valor > 0)
+
+                const sumValor = res.reduce((a, b) => a + b.valor, intialValue)
+
+                const MediaFat = sumValor / res.length
+
+                console.log(res)
+                console.log("Soma dos valores diarios: " + sumValor)
+                console.log(" Média das vendas no mês: " + sumValor / res.length)
+
+                divMedia.innerHTML = `Média das vendas no mês: ${MediaFat} `
+
+                divMaiorValor.innerHTML = `O maior valor é: ${maiorValor}`
+                divMenorValor.innerHTML = `O menor valor é: ${menorValor}`
+
+                divLista.innerHTML = `Lista com os valores maiores que a média do faturamento da loja:`
+
+                dados.filter((value) => value.valor > MediaFat).map((dia) => {
+                    divDiaFaturamento.innerHTML += `<li> Dia ${dia.dia} - valor ${dia.valor} </li > `
+                })
+
+            })
+        })
+
+    </script>
+</body>
+
+</html>

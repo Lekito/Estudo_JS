@@ -7,6 +7,6 @@ function reverterString(palavra) {
     return novaPalavra
 }
 
-console.log(reverterString('Vou ser novo colega de equipe!'))
+console.log(reverterString('Vou ser seu novo colega de equipe!'))
 
 console.log(reverterString('arara'))

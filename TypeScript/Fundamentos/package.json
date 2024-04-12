@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "ts-node app.ts",
     "repeticao": "ts-node repeticao.ts",
+    "objeto": "ts-node objeto.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

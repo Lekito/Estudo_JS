@@ -25,7 +25,7 @@ class User {
     }
 }
 
-const user = new User('Lekito', 32)
+const user: User = new User('Lekito', 32)
 user.showName();
 
 const otherUser = new User('Joao', 26)

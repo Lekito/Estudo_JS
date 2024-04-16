@@ -1,66 +1,39 @@
-//Declarações de variáveis
+// Go Banking
 
-let b: string = 'b';
-let n: number = 2;
-let x: boolean = true;
+// name, accountNumber
+// depositar(deposit) / sacar(withdraw)
+abstract class Account {
+    name: string
+    accountNumber: number
+    balance: number = 0
 
-let m: string | number | boolean = 2; // Não indico escopo muito aberto para uma variável. Talvez é melhor ficar com JavaScript puro.
-let j: any = 3; // Mesmo caso acima!
+    constructor(name: string, accountNumber: number) {
+        this.name = name;
+        this.accountNumber = accountNumber;
+    }
 
-m = 'Nath';
-m = false;
-j = 'Jonatas';
-j = true;
+    deposit = () => {
+        console.log('Você depositou: R$ ');
+    }
 
+    withdraw = () => {
+        console.log('Você sacou: R$ ')
+    }
 
-
-// Objetos e Interfaces
-interface Pessoa {
-    nome: string,
-    idade: number,
-    profissao: string | undefined
+    getBalance = () => {
+        console.log(this.balance)
+    }
 }
 
-const pessoa: Pessoa = {
-    nome: 'José',
-    idade: 28,
-    profissao: undefined
+class PeopleAccount extends Account {
+    doc_id: number
+
+    constructor(doc_id: number, name: string, accountNumber: number) {
+        super(name, accountNumber)
+        this.doc_id = doc_id;
+    }
 }
 
-const outraPessoa: Pessoa = {
-    nome: 'Alex',
-    idade: 32,
-    profissao: 'desenvolvedor'
-}
+const peopleAccount: PeopleAccount = new PeopleAccount(1, 'Alex', 1033)
+console.log(peopleAccount);
 
-const arrayPessoa: Pessoa[] = [
-    pessoa,
-    outraPessoa
-]
-
-const arrayPessoa2: Array<Pessoa> = [
-    pessoa,
-    outraPessoa,
-]
-
-const arrayNum: number[] = [
-    1, 2, 3, 4
-]
-
-const arrayString: string[] = [
-    '1', '2', '3'
-]
-
-
-
-
-
-/*
-const soma = (a: number, b: number) => {
-    console.log(a + b);
-}
-
-soma(2, 2);
-
-soma(1, 7);
-*/

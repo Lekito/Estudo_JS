@@ -13,8 +13,8 @@ const companyAccount: CompanyAccount = new CompanyAccount('Dio', 20)
 // console.log(companyAccount);
 // companyAccount.deposit();
 
-// peopleAccount.setName('Alex Ribeiro')
-// console.log(peopleAccount)
+// peopleAccount.setName('Alex Ribeiro') // não da mais para altera atributo readonly
+console.log(peopleAccount)
 // console.log(peopleAccount.getName())
 peopleAccount.deposit(20)
 console.log(peopleAccount)

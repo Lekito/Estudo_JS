@@ -3,6 +3,7 @@
 // depositar(deposit) / sacar(withdraw)
 import { PeopleAccount } from './class/PeopleAccount'
 import { CompanyAccount } from './class/CompanyAccount'
+import { NewAccount } from './class/NewAccount';
 
 
 const peopleAccount: PeopleAccount = new PeopleAccount(1, 'Alex', 1033)
@@ -24,3 +25,10 @@ peopleAccount.withdraw(220.5)
 peopleAccount.withdraw(15)
 
 companyAccount.getLoan(1500)
+
+const starAccount: NewAccount = new NewAccount('Star', 3355)
+
+starAccount.deposit(350)
+starAccount.deposit(10)
+console.log(starAccount)
+

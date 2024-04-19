@@ -1,5 +1,5 @@
 export abstract class GoAccount {
-    private name: string
+    private readonly name: string
     private readonly accountNumber: number
     private balance: number = 0
     private status: boolean = true
@@ -9,10 +9,11 @@ export abstract class GoAccount {
         this.accountNumber = accountNumber;
     }
 
-    setName = (name: string): void => {
-        this.name = name
-        console.log('Nome alterado com sucesso!')
-    }
+    // esse metodo não faz mais sentido pelo atributo ter recebido readonly. Não podendo mais ser editado apenas lido.
+    // setName = (name: string): void => {
+    //     this.name = name
+    //     console.log('Nome alterado com sucesso!')
+    // } 
 
     getName = (): string => {
         return this.name

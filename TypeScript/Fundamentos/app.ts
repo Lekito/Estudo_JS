@@ -10,9 +10,17 @@ console.log(peopleAccount);
 
 const companyAccount: CompanyAccount = new CompanyAccount('Dio', 20)
 // console.log(companyAccount);
-companyAccount.deposit();
+// companyAccount.deposit();
 
-peopleAccount.setName('Alex Ribeiro')
+// peopleAccount.setName('Alex Ribeiro')
+// console.log(peopleAccount)
+// console.log(peopleAccount.getName())
+peopleAccount.deposit(20)
 console.log(peopleAccount)
-console.log(peopleAccount.getName())
-peopleAccount.deposit()
+peopleAccount.deposit(300.5)
+peopleAccount.withdraw(100)
+peopleAccount.withdraw(1000)
+peopleAccount.withdraw(220.5)
+peopleAccount.withdraw(15)
+
+companyAccount.getLoan(1500)

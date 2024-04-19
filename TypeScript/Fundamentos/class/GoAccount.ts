@@ -1,7 +1,7 @@
 export abstract class GoAccount {
     private name: string
     private readonly accountNumber: number
-    balance: number = 0
+    private balance: number = 0
     private status: boolean = true
 
     constructor(name: string, accountNumber: number) {
@@ -18,21 +18,37 @@ export abstract class GoAccount {
         return this.name
     }
 
-    deposit = (): void => {
+    setBalance = (balance: number): number => {
+        return this.balance += balance
+    }
+
+    deposit = (balance: number): void => {
         if (this.validateStatus()) {
-            console.log('Você depositou')
+            this.balance = this.balance + balance
+            console.log('Você depositou ' + balance + ' seu saldo é R$ ' + this.balance)
         }
     }
 
-    withdraw = (): void => {
-        console.log('Você sacou: R$ ')
+    withdraw = (balance: number): void => {
+        if (this.validateStatus()) {
+
+            if (this.balance >= balance) {
+
+                this.balance = this.balance - balance
+
+                console.log("Você sacou R$ " + balance + ' seu saldo atual é R$ ' + this.balance)
+            } else {
+                console.log('Saldo insuficiente! Caro ' + this.name + " , você tem em sua conta R$ " + this.balance + " e quer sacar R$" + balance)
+            }
+
+        }
     }
 
     getBalance = (): void => {
         console.log(this.balance)
     }
 
-    private validateStatus = (): boolean => {
+    validateStatus = (): boolean => {
         if (this.status) {
             return this.status
         }

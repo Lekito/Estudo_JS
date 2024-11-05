@@ -48,3 +48,6 @@ export default tseslint.config({
   },
 })
 ```
+
+## This was the screen created for login.
+![image](https://github.com/user-attachments/assets/5f95d0a5-cf4c-4eb8-9d5a-a88f4c3eaf44)

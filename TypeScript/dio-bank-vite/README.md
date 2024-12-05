@@ -2,6 +2,7 @@
 ![image](https://github.com/user-attachments/assets/03c38535-d01b-4446-8fc4-2deed31e550d)
 
 Desenvolvido por [Alex Lekito](https://github.com/Lekito)
+This was the screen created for login.
 
 ### Projeto desenvolvido com React
 
@@ -13,16 +14,19 @@ Desenvolvido por [Alex Lekito](https://github.com/Lekito)
   - Testing Library
 
 ## Como rodar o projeto
-1. - Clone o repositório
-2. - Intale as dependencias
+1.  Clone o repositório
+2.  Intale as dependencias
 ```js
 npm install
 ```
-3. - Execute o projeto 
+3.  Execute o projeto 
 ```js
 npm run dev
 ```
-
+4.  Teste o projeto 
+```js
+npm run test
+```
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
@@ -72,6 +76,3 @@ export default tseslint.config({
   },
 })
 ```
-
-## This was the screen created for login.
-![image](https://github.com/user-attachments/assets/5f95d0a5-cf4c-4eb8-9d5a-a88f4c3eaf44)

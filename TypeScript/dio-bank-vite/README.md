@@ -7,7 +7,7 @@ Desenvolvido por [Alex Lekito](https://github.com/Lekito)
 ### Projeto desenvolvido com React
 
 ## Tecnologias 
-  - Typescrip
+  - Typescript
   - Vite
   - Chakra UI
   - Vitest

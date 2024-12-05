@@ -1,4 +1,28 @@
-# React + TypeScript + Vite
+# Desenvolvendo o Dio Bank
+![image](https://github.com/user-attachments/assets/03c38535-d01b-4446-8fc4-2deed31e550d)
+
+Desenvolvido por [Alex Lekito](https://github.com/Lekito)
+
+### Projeto desenvolvido com React
+
+## Tecnologias 
+  - Typescrip
+  - Vite
+  - Chakra UI
+  - Vitest
+  - Testing Library
+
+## Como rodar o projeto
+1. - Clone o repositório
+2. - Intale as dependencias
+```js
+npm install
+```
+3. - Execute o projeto 
+```js
+npm run dev
+```
+
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 

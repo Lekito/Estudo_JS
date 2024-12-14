@@ -3,7 +3,8 @@ import CardInfo from "@/components/CardInfo"
 import { Center, SimpleGrid, Spinner } from "@chakra-ui/react"
 import { useParams, useNavigate } from "react-router-dom"
 import { useContext, useEffect, useState } from "react"
-import { AppContext } from "@/App"
+import { AppContext } from "@/components/AppContext"
+
 
 interface UserData {
     email: string

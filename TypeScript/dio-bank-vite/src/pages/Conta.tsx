@@ -2,7 +2,8 @@ import { api } from "@/api"
 import CardInfo from "@/components/CardInfo"
 import { Center, SimpleGrid, Spinner } from "@chakra-ui/react"
 import { useParams, useNavigate } from "react-router-dom"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
+import { AppContext } from "@/App"
 
 interface UserData {
     email: string
@@ -17,6 +18,9 @@ const Conta = () => {
     const actualData = new Date()
     const { id } = useParams()
     const navigate = useNavigate()
+
+    const context = useContext(AppContext)
+    console.log('Retorno da pagina Conta', context)
 
     if (userData && id !== userData.id) {
         navigate('/')

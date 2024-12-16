@@ -1,8 +1,14 @@
 import { expect, test, describe, vi } from 'vitest'
 //import { screen, render } from '@testing-library/react'
 import { login } from './login'
+import { useContext } from 'react'
 
-
+vi.mock(import('react'), () => ({
+    ...vi.importActual('react'),
+    useContext: () => ({
+        isLoggedIn: true
+    })
+}))
 describe('login', () => {
 
     const mockAlert = vi.fn()

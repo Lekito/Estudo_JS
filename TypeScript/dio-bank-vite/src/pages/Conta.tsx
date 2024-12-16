@@ -20,12 +20,10 @@ const Conta = () => {
     const { id } = useParams()
     const navigate = useNavigate()
 
-    const context = useContext(AppContext)
-    console.log('Retorno da pagina Conta', context)
+    const { isLoggedIn } = useContext(AppContext)
+    console.log('Retorno da pagina Conta', isLoggedIn)
 
-    if (userData && id !== userData.id) {
-        navigate('/')
-    }
+    !isLoggedIn && navigate('/')
 
     useEffect(() => {
         const getData = async () => {
@@ -35,6 +33,10 @@ const Conta = () => {
 
         getData()
     }, [])
+
+    if (userData && id !== userData.id) {
+        navigate('/')
+    }
 
     return (
         <Center>

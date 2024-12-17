@@ -1,32 +1,40 @@
 import { expect, test, describe, vi } from 'vitest'
 //import { screen, render } from '@testing-library/react'
 import { login } from './login'
-import { useContext } from 'react'
 
-vi.mock(import('react'), () => ({
-    ...vi.importActual('react'),
-    useContext: () => ({
-        isLoggedIn: true
-    })
-}))
+const mockSetIsLoggedIn = vi.fn()
+const mockNavigate = vi.fn()
+
+vi.mock(import("react"), async (importOriginal) => {
+    const actual = await importOriginal()
+    return {
+
+        ...actual,
+        useContext: () => ({
+            setIsLoggedIn: mockSetIsLoggedIn
+        })
+    }
+})
+
+vi.mock(import("react-router-dom"), async (importOriginal) => {
+    const actual = (await importOriginal()) as any
+    return {
+        ...actual,
+        useNavigate: () => mockNavigate
+    }
+})
 describe('login', () => {
-
-    const mockAlert = vi.fn()
-    window.alert = mockAlert
     const mockEmail = 'alex@gmail.com'
 
     test('Deve exibir um alert com boas vindas caso seja valido', async () => {
-        await login('alex@gmail.com')
-        expect(mockAlert).toHaveBeenCalledWith('Bem vindo alex@gmail.com!')
-    })
-
-    test('Não deve exibir a mensagem de boas vindas sem o email', async () => {
         await login(mockEmail)
-        expect(mockAlert).not.toHaveBeenCalledWith('Bem vindo!')
+        expect(mockSetIsLoggedIn).toHaveBeenCalledWith(true)
+        expect(mockNavigate).toHaveBeenCalledWith('/1')
     })
 
     test('Deve exibir um erro caso o email seja inválido', async () => {
         await login('email@example.com')
-        expect(mockAlert).toHaveBeenCalledWith('Email inválido')
+        expect(mockSetIsLoggedIn).not.toHaveBeenCalledWith()
+        expect(mockNavigate).not.toHaveBeenCalledWith()
     })
 })

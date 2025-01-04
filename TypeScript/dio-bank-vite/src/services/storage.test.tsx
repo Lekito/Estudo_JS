@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from "vitest";
-import { createLocalStorage, getAllLocalStorage } from "./storage";
+import { changeLocalStorage, createLocalStorage, getAllLocalStorage } from "./storage";
 
 const diobank = {
     login: false
@@ -15,6 +15,12 @@ describe('storage', () => {
     it('Deve criar o objeto no localStorage', () => {
         const mockSetItem = vi.spyOn(Storage.prototype, 'setItem')
         createLocalStorage()
+        expect(mockSetItem).toHaveBeenCalledWith('diobank', JSON.stringify(diobank))
+    })
+
+    it('Deve alterar o valor do objeto no localStorage', () => {
+        const mockSetItem = vi.spyOn(Storage.prototype, 'setItem')
+        changeLocalStorage(diobank)
         expect(mockSetItem).toHaveBeenCalledWith('diobank', JSON.stringify(diobank))
     })
 })

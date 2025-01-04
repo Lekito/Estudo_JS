@@ -2,6 +2,7 @@ import { AppContext } from "../components/AppContext";
 import { Card } from "@/components/Card";
 import DButton from "@/components/DButton";
 import { login } from "@/services/login";
+import { changeLocalStorage } from "@/services/storage";
 import { Center, Text, Input } from "@chakra-ui/react";
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -20,6 +21,7 @@ const Home = () => {
         }
 
         setIsLoggedIn(true)
+        changeLocalStorage({ login: true })
         navigate('conta/1')
     }
 

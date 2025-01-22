@@ -11,13 +11,14 @@ import { useNavigate } from "react-router-dom";
 const Home = () => {
 
     const [email, setEmail] = useState<string>('')
+    const [senha, setSenha] = useState<string>('')
     const { setIsLoggedIn } = useContext(AppContext)
     const navigate = useNavigate()
 
-    const validateUser = async (email: string) => {
-        const loggedIn = await login(email)
+    const validateUser = async (email: string, senha: string) => {
+        const loggedIn = await login(email, senha)
         if (!loggedIn) {
-            return alert('Email inválido')
+            return alert('Email ou senha inválidos!')
         }
 
         setIsLoggedIn(true)
@@ -25,6 +26,7 @@ const Home = () => {
         navigate('conta/1')
     }
 
+    console.log(senha)
     return (
         <Card>
             {/* {userData === null || userData === undefined && <h1 >Loading...</h1>}  */}
@@ -33,9 +35,9 @@ const Home = () => {
             </Center>
 
             <Input placeholder="email" color='#1a1919' marginTop="30px" value={email} onChange={(event) => setEmail(event.target.value)} />
-            <Input placeholder="Senha" marginTop="30px" />
+            <Input placeholder="Senha" marginTop="30px" value={senha} onChange={(event) => setSenha(event.target.value)} />
             <Center>
-                <DButton onClick={() => validateUser(email)} />
+                <DButton onClick={() => validateUser(email, senha)} />
             </Center>
         </Card>
     )

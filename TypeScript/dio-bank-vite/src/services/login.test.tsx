@@ -27,15 +27,16 @@ const mockNavigate = vi.fn()
 // })
 describe('login', () => {
     const mockEmail = 'alex@gmail.com'
+    const mockSenha = '123456'
 
     test('Deve exibir um alert com boas vindas caso seja valido', async () => {
-        const response = await login(mockEmail)
+        const response = await login(mockEmail, mockSenha)
         expect(response).toBeTruthy()
 
     })
 
     test('Deve exibir um erro caso o email seja inválido', async () => {
-        const response = await login('email@example.com')
+        const response = await login('email@example.com', '123451')
         expect(response).toBeFalsy()
     })
 })

@@ -2,8 +2,8 @@ import { expect, test, describe, vi } from 'vitest'
 //import { screen, render } from '@testing-library/react'
 import { login } from './login'
 
-const mockSetIsLoggedIn = vi.fn()
-const mockNavigate = vi.fn()
+//const mockSetIsLoggedIn = vi.fn()
+//const mockNavigate = vi.fn()
 
 //Exemplos de mock desestruturando o react
 
